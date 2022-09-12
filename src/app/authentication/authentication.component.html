@@ -1,0 +1,24 @@
+<html>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <form class="box" name="form" (ngSubmit)="onSubmit()" >
+          <h1>Login</h1>
+          <p class="text-muted"> Please enter your email and password!</p>
+          <input type="email" id="form-email"
+                 name="username" [(ngModel)]="username"
+                 placeholder="Email address" required/>
+
+          <input class="form-control" type="password"
+                 name="password" [(ngModel)]="password"
+                 placeholder="Password" required/>
+
+          <button type="submit">Sign in</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</html>

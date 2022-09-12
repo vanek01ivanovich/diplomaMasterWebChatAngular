@@ -1,0 +1,36 @@
+<html>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <form class="box" name="form" (ngSubmit)="onSubmit()" >
+          <h1>Login</h1>
+          <p class="text-muted"> create user </p>
+          <input type="email" id="form-email"
+                 name="username" [(ngModel)]="username"
+                 placeholder="Email address" required/>
+
+          <input class="form-control" type="password"
+                 name="password" [(ngModel)]="password"
+                 placeholder="Password" required/>
+
+          <input class="form-control" type="email"
+                 name="email" [(ngModel)]="email"
+                 placeholder="email" required/>
+
+          <input class="form-control" type="name"
+                 name="name" [(ngModel)]="name"
+                 placeholder="name" required/>
+
+          <input class="form-control" type="surname"
+                 name="surname" [(ngModel)]="surname"
+                 placeholder="surname" required/>
+
+          <button type="submit">Create user</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</html>
