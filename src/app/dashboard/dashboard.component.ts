@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DashboardService} from "../service/dashboard.service";
-import {User} from "../model/user";
+import {User} from "../model/User";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({

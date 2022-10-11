@@ -1,0 +1,32 @@
+
+<div class="col-12">
+  <div class="">
+    <ul class="nav nav-tabs" style="width: 1150px">
+      <li class="nav-item">
+        <a class="nav-link active" #buttonViewMyProfile (click)="clickButtonViewMyProfile()">ViewMyProfile</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" #buttonProfileListAndSearch (click)="clickButtonProfileListAndSearch()">ProfileListAndSearch</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" #buttonCreateUserProfile (click)="clickButtonCreateUserProfile()">CreateUserProfile</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="isButtonViewMyProfile">
+  <app-view-user-profile></app-view-user-profile>
+</div>
+
+<div *ngIf="isButtonProfileListAndSearch">
+  <app-profile-list></app-profile-list>
+</div>
+
+<div *ngIf="isButtonCreateUserProfile">
+  <app-create-user-profile></app-create-user-profile>
+</div>
+
+
+
+

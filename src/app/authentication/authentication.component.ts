@@ -28,12 +28,13 @@ export class AuthenticationComponent implements OnInit {
 
   onSubmit() {
     console.log("on submit")
-    this.loginInfo = new AuthLoginInfo(this.username, this.password);
+    this.loginInfo = new AuthLoginInfo(this.username, btoa(this.password));
     console.log(this.loginInfo);
     this.authService.login(this.loginInfo).subscribe(
       data => {
         console.log("data", data);
         console.log('data.authorities ', data.authorities);
+        this.tokenStorage.saveUserId(data.userId);
         this.tokenStorage.saveToken(data.token);
         this.tokenStorage.saveUserName(data.username);
         this.tokenStorage.saveAuthorities(data.authorities);

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {User} from "../model/user";
+import {Component, OnInit} from '@angular/core';
+import {User} from "../model/User";
 import {UserService} from "../service/user.service";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-users',
@@ -14,27 +15,27 @@ export class AddUsersComponent implements OnInit {
   name: string;
   username: string;
   password: string;
+  role: string;
   surname: string;
   registerForm: any;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {
+  }
 
   ngOnInit(): void {
   }
 
   //todo check formGroup what is it???
-  onSubmit(){
+  onSubmit() {
     console.log("submit")
-    this.user = new User(this.email,btoa(this.password),this.name,this.surname,this.username)
+    this.user = new User(this.email, btoa(this.password), this.name, this.surname,this.role, this.username)
     console.log(this.user)
-    //this.userService.createUser(this.user);
-    this.userService.getAllUsers().subscribe(
-      data => {
-        console.log(data);
-      }
-    );
+    this.userService.createUser(this.user).then(r => console.log("r", r));
   }
 
+  alertWithSuccess(){
+    Swal.fire('Thank you...', 'You submitted succesfully!', 'success')
+  }
 
 
 }
