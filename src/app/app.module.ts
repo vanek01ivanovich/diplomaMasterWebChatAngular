@@ -27,6 +27,7 @@ import { EditUserProfileComponent } from './user-profile/edit-user-profile/edit-
 import { ViewUserProfileComponent } from './user-profile/view-user-profile/view-user-profile.component';
 import { CreateUserProfileComponent } from './user-profile/create-user-profile/create-user-profile.component';
 import { ProfileListComponent } from './user-profile/profile-list/profile-list.component';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ProfileListComponent } from './user-profile/profile-list/profile-list.c
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TranslateModule
     ],
   providers: [
     DashboardService,
